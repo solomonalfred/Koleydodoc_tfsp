@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.button-container {
+    margin: auto;
+    width: 50%;
+}
+
+.button-link {
+    text-decoration: none;
+}
+
+.button-node {
+    background-color: #4CAF50; /* Зеленый */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-node:hover {
+    background-color: #45a049;
+}
+
+#main-form {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    margin: 10px 0;
+}
+
+.radio-group table {
+    width: 100%;
+}
+
+.radio-group td {
+    padding: 5px;
+}
+
+textarea, input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.center-div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.download-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+.text-block {
+    margin: 20px;
+    text-align: left;
+}
+
+.text-block p, .text-block font {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.text-block font[color="red"] {
+    color: red;
+}

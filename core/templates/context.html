@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Колейдодок</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <form id="main-form" method="POST" enctype="multipart/form-data" action="context/color">
+      <fieldset>
+          <legend>Формат текста</legend>
+          <div class="radio-group">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td style="text-align: left; ">
+                                <input type="radio" name="input_type" id="text" value="text/text" required/>
+                                <label for="text">Текст</label>
+                            </td>
+                            <td style="text-align: left; ">
+                                <textarea id="input-text" type="text" name="input_text_data" placeholder="Текст"/></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; ">
+                                <input type="radio" name="input_type" id="file" value="file/docx" required/>
+                                <label for="file">Docx файл</label>
+                            </td>
+                            <td style="text-align: left; ">
+                                <input id="input-file" type="file" name="input_file_data" accept=".doc,.docx"
+                                       placeholder="Выберите файл"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; ">
+
+                            </td>
+                            <td style="text-align: left; ">
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+      </fieldset>
+      <fieldset>
+          <legend for="input-context">Контекст</legend>
+          <div>
+              <input id="input-context" type="text" name="context" placeholder="Контекст (Опционально)"/>
+          </div>
+      </fieldset>
+      <fieldset>
+              <legend>Выходные данные</legend>
+              <div class="radio-group">
+                    <table>
+                        <tr>
+                            <td style="text-align: left; ">
+                                <input type="radio" name="output_type" id="simple_json" value="json/simple" required/>
+                                <label for="simple_json">Значимые предложения</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; ">
+                                <input type="radio" name="output_type" id="tagged_json" value="json/tagged" required/>
+                                <label for="tagged_json">Цветной HTML текст</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; ">
+                                <input type="radio" name="output_type" id="docx" value="file/docx" required/>
+                                <label for="docx">Загрузка Docx</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+      </fieldset>
+      <input type="submit" value="Разметить" />
+  </form>
+</body>
+</html>

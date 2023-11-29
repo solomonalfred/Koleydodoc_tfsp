@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+
+  api:
+    container_name: kaleydodoc_api
+    image: kaleydodoc_api
+    build:
+      context: ./
+      dockerfile: "docker/api/Dockerfile"
+    ports:
+      - "7777:7777"
+    volumes:
+      - ./files:/files
+      - ./data:/data
+    restart: always

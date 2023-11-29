@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+Jinja2
+requests
+requests
+torch
+nltk
+torchtext
+numpy
+tqdm
+python-docx
+spacy
+redis
+sentence-transformers

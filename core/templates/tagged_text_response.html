@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Колейдодок</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="text-block">
+        {% for sentence_data in sentences %}
+                {% if sentence_data.tag == 'N' %}
+                    <p>{{ sentence_data.sentence }}</p>
+                {% elif sentence_data.tag == 'W' %}
+                    <font color="red">{{ sentence_data.sentence }}</font>
+                {% else %}
+                    <p>{{ sentence_data.sentence }}</p>
+                {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
