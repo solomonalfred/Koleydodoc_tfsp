@@ -10,5 +10,4 @@ numpy
 tqdm
 python-docx
 spacy
-redis
 sentence-transformers
