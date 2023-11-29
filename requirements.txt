@@ -3,7 +3,6 @@ uvicorn
 python-multipart
 Jinja2
 requests
-requests
 torch
 nltk
 torchtext
