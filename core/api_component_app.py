@@ -117,7 +117,7 @@ if __name__ == "__main__":
     config = Config(
         app=app,
         host="0.0.0.0",
-        port=7777
+        port=6666
     )
     server = Server(config)
     loop = asyncio.get_event_loop()
