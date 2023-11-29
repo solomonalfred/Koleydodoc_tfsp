@@ -7,7 +7,7 @@ services:
     image: kaleydodoc_api
     build:
       context: ./
-      dockerfile: "docker/api/Dockerfile"
+      dockerfile: "Docker/api/Dockerfile"
     ports:
       - "6666:6666"
     volumes:
