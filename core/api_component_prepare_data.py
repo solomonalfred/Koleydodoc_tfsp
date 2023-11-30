@@ -1,3 +1,5 @@
+from typing import Any
+
 from api_component_api_constants import Tags, APIInputDataTypes, APILanguage, ERROR, APIOutputDataTypes
 from core.core_object import Core
 from core.agreement import Agreement
@@ -63,6 +65,7 @@ def process_risk(
         lang_type: str,
         input_type: str,
         input_text_data: str,
+        core: Any,
         input_file_data: UploadFile = File(None),
         output_type: str = Form(...)
 ):
@@ -95,5 +98,5 @@ def process_risk(
         data.agreement_error = ERROR.BAD_INPUT
 
     data.agreenent_language = Language.RUS
-    result = Core().process(data)
+    result = core.process(data)
     return result

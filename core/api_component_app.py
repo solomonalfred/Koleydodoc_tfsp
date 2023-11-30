@@ -11,11 +11,14 @@ from pathlib import Path
 from api_component_prepare_data import *
 from api_component_api_constants import *
 from risk_ai_model import TextClassificationModel
+from core.core_object import Core
+from core.agreement import Agreement
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
+core = Core()
 
 @app.get("/")
 async def start_menu(request: Request):
@@ -83,7 +86,12 @@ async def risk_find(
         input_file_data: UploadFile = File(None),
         output_type: str = Form(...)
 ):
-    data = process_risk(lang_type, input_type, input_text_data, input_file_data, output_type)
+    data = process_risk(lang_type,
+                        input_type,
+                        input_text_data,
+                        core,
+                        input_file_data,
+                        output_type)
     if data.agreement_.agreement_error != ERROR.OK:
         result = {
             "request": request,
