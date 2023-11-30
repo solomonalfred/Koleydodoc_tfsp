@@ -1,3 +1,7 @@
+import torch
+torch.set_grad_enabled(False)
+
+
 import os
 from urllib.parse import urlencode
 from uvicorn import Config, Server
