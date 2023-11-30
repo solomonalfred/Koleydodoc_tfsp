@@ -7,6 +7,7 @@ from constants.language import Language
 from constants.input_data_types import InputDataTypes
 from constants.output_data_types import OutputDataTypes
 from fastapi import Form, UploadFile, File
+import torch
 
 
 def tagged_sentences(sent, tag):
@@ -58,7 +59,8 @@ def process_context(
     else:
         data.agreement_error = ERROR.BAD_INPUT
     data.agreenent_language = Language.RUS
-    result = Core().process(data)
+    with torch.no_grad():
+        result = Core().process(data)
     return result
 
 def process_risk(
@@ -98,5 +100,6 @@ def process_risk(
         data.agreement_error = ERROR.BAD_INPUT
 
     data.agreenent_language = Language.RUS
-    result = core.process(data)
+    with torch.no_grad():
+        result = core.process(data)
     return result
