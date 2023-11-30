@@ -96,7 +96,7 @@ async def risk_find(
                         core,
                         input_file_data,
                         output_type)
-    time.sleep(2)
+    time.sleep(1.5)
     if data.agreement_.agreement_error != ERROR.OK:
         result = {
             "request": request,
