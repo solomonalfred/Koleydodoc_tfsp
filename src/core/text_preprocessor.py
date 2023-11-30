@@ -1,6 +1,6 @@
 from agreement_state import AgreementState
 from nltk.tokenize import sent_tokenize
-from src.core.processor_manager import ProcesorManager
+from core.processor_manager import ProcesorManager
 
 class TextPreprocessor:
 

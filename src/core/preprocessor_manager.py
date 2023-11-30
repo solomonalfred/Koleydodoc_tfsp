@@ -1,11 +1,11 @@
-from src.constants.language import Language
-from src.constants.input_data_types import InputDataTypes
-from src.constants.output_data_types import OutputDataTypes
+from constants.language import Language
+from constants.input_data_types import InputDataTypes
+from constants.output_data_types import OutputDataTypes
 from agreement_state import AgreementState
 from docx_preprocessor import DocxPreprocessor
 from text_preprocessor import TextPreprocessor
 from error_low_prameters import LowParametrs
-from src.constants.error_state import ErrorAgreement
+from constants.error_state import ErrorAgreement
 
 class PreprocessorManager:
 

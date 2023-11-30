@@ -1,5 +1,5 @@
 from agreement_state import AgreementState
-from src.constants.output_data_types import OutputDataTypes
+from constants.output_data_types import OutputDataTypes
 from json_tagged_postprocessor import TaggedJSONPostprocessor
 from json_postprocessor import JSONPostprocessor
 from docx_postprocesor import DocxPostprocessor

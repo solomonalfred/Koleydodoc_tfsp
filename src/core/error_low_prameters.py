@@ -1,5 +1,5 @@
 from agreement_state import AgreementState
-from src.core.postprocessor_manager import PostprocessorManager
+from core.postprocessor_manager import PostprocessorManager
 
 class LowParametrs:
 

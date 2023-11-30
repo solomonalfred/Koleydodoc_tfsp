@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
-from src.constants.tags import Tags
-from src.constants.variables import DATA_FOLDER
+from constants.tags import Tags
+from constants.variables import DATA_FOLDER
 from agreement_state import AgreementState
 import numpy as np
 import pickle

@@ -2,7 +2,7 @@ from agreement_state import AgreementState
 from nltk.tokenize import word_tokenize
 from context_ai_model import ContextAIModel
 from error_model import BrokenModel
-from src.core.postprocessor_manager import PostprocessorManager
+from core.postprocessor_manager import PostprocessorManager
 
 class ContextBasedProcessor:
 
