@@ -1,5 +1,6 @@
 from agreement import Agreement
 
+
 class AgreementState:
 
     def __init__(self, agree: 'Agreement' = Agreement()):
