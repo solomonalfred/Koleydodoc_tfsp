@@ -1,5 +1,5 @@
 from .generate_file_name import generate_file_name
-from src.constants import FILES_FOLDER
+from constants import FILES_FOLDER
 import os
 from fastapi import UploadFile
 
