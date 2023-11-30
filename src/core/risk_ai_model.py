@@ -1,14 +1,13 @@
 from agreement_state import AgreementState
-from agreement import Agreement
-from constants.tags import Tags
+from src.constants.tags import Tags
 from torchtext.data.utils import get_tokenizer
-from constants.variables import DATA_FOLDER
+from src.constants.variables import DATA_FOLDER
 import torch
 from torch import nn
 import pickle
 import os
-from constants.language import Language
-from constants.error_state import ErrorAgreement
+from src.constants.language import Language
+
 
 class TextClassificationModel(nn.Module):
 

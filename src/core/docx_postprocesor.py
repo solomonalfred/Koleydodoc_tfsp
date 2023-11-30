@@ -1,11 +1,10 @@
 from agreement_state import AgreementState
 from docx import Document
 from docx.enum.text import WD_COLOR_INDEX
-from constants.variables import FILES_FOLDER
+from src.constants.variables import FILES_FOLDER
 import os
-from utility import generate_file_name
-from constants.output_data_types import OutputDataTypes
-from constants.input_data_types import InputDataTypes
+from src.utility import generate_file_name
+from src.constants.input_data_types import InputDataTypes
 from pathlib import Path
 
 class DocxPostprocessor:

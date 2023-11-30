@@ -1,4 +1,4 @@
-from core.preprocessor_manager import PreprocessorManager
+from src.core.preprocessor_manager import PreprocessorManager
 from agreement import Agreement
 from agreement_state import AgreementState
 

@@ -1,11 +1,10 @@
 from api_component_api_constants import Tags, APIInputDataTypes, APILanguage, ERROR, APIOutputDataTypes
-from core.core_object import Core
-from core.agreement import Agreement
-from constants.language import Language
-from constants.input_data_types import InputDataTypes
-from constants.output_data_types import OutputDataTypes
+from src.core.core_object import Core
+from src.core.agreement import Agreement
+from src.constants.language import Language
+from src.constants.input_data_types import InputDataTypes
+from src.constants.output_data_types import OutputDataTypes
 from fastapi import Form, UploadFile, File
-from core.risk_ai_model import TextClassificationModel
 
 
 def tagged_sentences(sent, tag):

@@ -13,4 +13,5 @@ services:
     volumes:
       - ./files:/files
       - ./data:/data
+      - ./src:/src
     restart: always

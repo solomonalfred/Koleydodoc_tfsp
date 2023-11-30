@@ -1,8 +1,8 @@
 from agreement_state import AgreementState
 from risk_ai_model import RiskAIModel
 from error_model import BrokenModel
-from core.postprocessor_manager import PostprocessorManager
-from risk_ai_model import TextClassificationModel
+from src.core.postprocessor_manager import PostprocessorManager
+
 
 class RiskProcessor:
 

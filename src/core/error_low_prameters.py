@@ -1,7 +1,7 @@
 from agreement_state import AgreementState
-from core.postprocessor_manager import PostprocessorManager
+from src.core.postprocessor_manager import PostprocessorManager
 
-class BrokenModel:
+class LowParametrs:
 
     def __init__(self, agree_: 'AgreementState'):
         self.agree = agree_

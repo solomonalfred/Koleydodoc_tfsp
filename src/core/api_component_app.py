@@ -22,7 +22,7 @@ async def start_menu(request: Request):
 
 @app.get("/file", response_class=FileResponse)
 async def download_file(filename: str):
-    file_path = os.path.join("../files", filename)
+    file_path = os.path.join("../../files", filename)
     return FileResponse(file_path, filename=filename)
 
 @app.get("/context", response_class=HTMLResponse)
@@ -117,7 +117,7 @@ if __name__ == "__main__":
     config = Config(
         app=app,
         host="0.0.0.0",
-        port=6666
+        port=8000
     )
     server = Server(config)
     loop = asyncio.get_event_loop()

@@ -3,10 +3,10 @@ from docx import Document
 from nltk.tokenize import sent_tokenize
 import shutil
 import os
-from utility import generate_file_name
+from src.utility import generate_file_name
 from error_wrong_format import WrongFormat
-from constants.error_state import ErrorAgreement
-from core.processor_manager import ProcesorManager
+from src.constants.error_state import ErrorAgreement
+from src.core.processor_manager import ProcesorManager
 
 
 class DocxPreprocessor:
