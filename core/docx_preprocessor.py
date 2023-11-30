@@ -28,7 +28,8 @@ class DocxPreprocessor:
             os.remove(filename)
             self.agree.change_agreement_state(text)
             return ProcesorManager(self.agree).process()
-        except:
+        except Exception as e:
+            print(e)
             self.agree.agreement_.agreement_error = ErrorAgreement.error_wrong_format
             return WrongFormat(self.agree).process()
 

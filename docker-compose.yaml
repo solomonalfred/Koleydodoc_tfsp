@@ -7,11 +7,10 @@ services:
     image: kaleydodoc_api
     build:
       context: ./
-      dockerfile: "Docker/api/Dockerfile"
+      dockerfile: "docker/api/Dockerfile"
     ports:
       - "8000:8000"
     volumes:
       - ./files:/files
       - ./data:/data
-      - ./src:/src
     restart: always

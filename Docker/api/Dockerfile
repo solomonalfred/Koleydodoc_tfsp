@@ -10,8 +10,10 @@ RUN python3 -m spacy download ru_core_news_lg
 RUN python3 -m spacy download en_core_web_lg
 RUN python3 -m nltk.downloader punkt
 
-ENV PYTHONPATH "/src"
+COPY . .
 
-WORKDIR /src/core
+ENV PYTHONPATH "/"
+
+WORKDIR core
 
 CMD ["python3", "api_component_app.py"]

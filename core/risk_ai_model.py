@@ -1,4 +1,5 @@
 from agreement_state import AgreementState
+from constants import ErrorAgreement
 from constants.tags import Tags
 from torchtext.data.utils import get_tokenizer
 from constants.variables import DATA_FOLDER
@@ -32,17 +33,22 @@ class RiskAIModel:
     def __init__(self, agree_: 'AgreementState'):
         self.agree = agree_
         self.broken_model = False
-        if self.agree.agreement_.agreenent_language == Language.RUS:
-            path = os.path.join(DATA_FOLDER, 'binary_model.pth')
-            # path = "/home/solomon/PycharmProjects/state_core/data/binary_model_eng.pth"
-            self._tokenizer = get_tokenizer('spacy', language='ru_core_news_lg')
-        else:
-            path = os.path.join(DATA_FOLDER, 'binary_model_eng.pth')
-            # path = "/home/solomon/PycharmProjects/state_core/data/binary_model.pth"
-            self._tokenizer = get_tokenizer('spacy', language='en_core_web_lg')
-        self._model = torch.load(path)
-        path = os.path.join(DATA_FOLDER, 'binary_vocab.pickle')
-        self._vocab = pickle.load(open(path, 'rb'))
+        try:
+            if self.agree.agreement_.agreenent_language == Language.RUS:
+                path = os.path.join(DATA_FOLDER, 'binary_model.pth')
+                # path = "data/binary_model_eng.pth"
+                self._tokenizer = get_tokenizer('spacy', language='ru_core_news_lg')
+            else:
+                path = os.path.join(DATA_FOLDER, 'binary_model_eng.pth')
+                # path = "data/binary_model.pth"
+                self._tokenizer = get_tokenizer('spacy', language='en_core_web_lg')
+            self._model = torch.load(path)
+            path = os.path.join(DATA_FOLDER, 'binary_vocab.pickle')
+            self._vocab = pickle.load(open(path, 'rb'))
+        except Exception as e:
+            print(e)
+            self.agree.agreement_.agreement_error = ErrorAgreement.error_model
+            self.broken_model = True
         '''
         try:
             if self.agree.agreement_.agreenent_language == Language.RUS:
