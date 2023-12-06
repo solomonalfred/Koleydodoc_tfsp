@@ -9,7 +9,7 @@ services:
       context: ./
       dockerfile: "docker/api/Dockerfile"
     ports:
-      - "7777:7777"
+      - "8000:8000"
     volumes:
       - ./files:/files
       - ./data:/data
