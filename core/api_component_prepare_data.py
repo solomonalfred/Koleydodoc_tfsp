@@ -64,7 +64,6 @@ def process_context(
     return result
 
 def process_risk(
-        lang_type: str,
         input_type: str,
         input_text_data: str,
         core: Any,
@@ -72,13 +71,14 @@ def process_risk(
         output_type: str = Form(...)
 ):
     data = Agreement()
-    if lang_type == APILanguage.RUS:
-        data.agreenent_language = Language.RUS
-    elif lang_type == APILanguage.ENG:
-        data.agreenent_language = Language.ENG
-    else:
-        data.agreement_error = ERROR.BAD_INPUT
+    #     if lang_type == APILanguage.RUS:
+    #         data.agreenent_language = Language.RUS
+    #     elif lang_type == APILanguage.ENG:
+    #         data.agreenent_language = Language.ENG
+    #     else:
+    #         data.agreement_error = ERROR.BAD_INPUT
 
+    data.agreenent_language = Language.RUS
     if input_type == APIInputDataTypes.TEXT_TEXT:
         data.agreement_input_type = InputDataTypes.TEXT
         data.text = input_text_data
@@ -99,7 +99,6 @@ def process_risk(
     else:
         data.agreement_error = ERROR.BAD_INPUT
 
-    data.agreenent_language = Language.RUS
     with torch.no_grad():
         result = core.process(data)
     return result

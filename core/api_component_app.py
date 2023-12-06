@@ -84,14 +84,12 @@ async def context_find(
 @app.post("/risk/color", response_class=HTMLResponse)
 async def risk_find(
         request: Request,
-        lang_type: str = Form(...),
         input_type: str = Form(...),
         input_text_data: str = Form(None),
         input_file_data: UploadFile = File(None),
         output_type: str = Form(...)
 ):
-    data = process_risk(lang_type,
-                        input_type,
+    data = process_risk(input_type,
                         input_text_data,
                         core,
                         input_file_data,

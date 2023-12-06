@@ -11,7 +11,7 @@ from constants.language import Language
 
 token_rus = get_tokenizer('spacy', language='ru_core_news_lg')
 
-token_eng = get_tokenizer('spacy', language='en_core_web_lg')
+# token_eng = get_tokenizer('spacy', language='en_core_web_lg')
 
 
 class TextClassificationModel(nn.Module):
@@ -38,14 +38,16 @@ class RiskAIModel:
         self.agree = agree_
         self.broken_model = False
         try:
-            if self.agree.agreement_.agreenent_language == Language.RUS:
-                path = os.path.join(DATA_FOLDER, 'binary_model.pth')
-                # path = "data/binary_model_eng.pth"
-                self._tokenizer = token_rus
-            else:
-                path = os.path.join(DATA_FOLDER, 'binary_model_eng.pth')
-                # path = "data/binary_model.pth"
-                self._tokenizer = token_eng
+            #             if self.agree.agreement_.agreenent_language == Language.RUS:
+            #                 path = os.path.join(DATA_FOLDER, 'binary_model.pth')
+            #                 # path = "data/binary_model_eng.pth"
+            #                 self._tokenizer = token_rus
+            #             else:
+            #                 path = os.path.join(DATA_FOLDER, 'binary_model_eng.pth')
+            #                 # path = "data/binary_model.pth"
+            #                 self._tokenizer = token_eng
+            path = os.path.join(DATA_FOLDER, 'binary_model.pth')
+            self._tokenizer = token_rus
             self._model = torch.load(path)
             path = os.path.join(DATA_FOLDER, 'binary_vocab.pickle')
             self._vocab = pickle.load(open(path, 'rb'))
